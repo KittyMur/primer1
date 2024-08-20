@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : Facade
 {
     [SerializeField]
     private SwordData swordData;
-    private void OnMouseDown() 
+
+    public LayerMask mask;
+    public virtual void swordDiscovery()
     {
-        Debug.Log(swordData.name); 
-        Debug.Log(swordData.Description); 
-        Debug.Log(swordData.Icon.name); 
-        Debug.Log(swordData.GoldCost); 
-        Debug.Log(swordData.AttackDamage); 
+
     }
 }
