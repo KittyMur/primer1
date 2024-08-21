@@ -18,5 +18,4 @@ public class Facade : MonoBehaviour
     {
         _input.Disable();
     }
-    
 }
