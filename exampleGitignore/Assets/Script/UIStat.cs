@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIStat : MonoBehaviour
 {
     public Text stats;
+    public GameObject player;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -19,7 +20,7 @@ public class UIStat : MonoBehaviour
     }
     private void moveText()
     {
-        stats.text = "Player is move";
+        stats.text = "Player is move with speed = ";
     }
     private void jumpText()
     {

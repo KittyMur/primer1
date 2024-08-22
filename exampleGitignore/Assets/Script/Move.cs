@@ -10,7 +10,6 @@ public class Move : Facade
     public static event Action movedDelegate;
     public InputAction movement;
     Vector2 movedirection;
-    protected int speed = 50;
     // Update is called once per frame
     private void OnEnable()
     {
@@ -29,7 +28,7 @@ public class Move : Facade
         Vector3 mdirection = new Vector3(movedirection.x, 0, movedirection.y);
         transform.position += mdirection * scaedMoveSpeed;
 
-        if (movement.WasPressedThisFrame())
+        //if (movement.WasPressedThisFrame())
             movedDelegate?.Invoke();
     }
 }

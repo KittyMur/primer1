@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class Jump : Facade
 {
     public float raycastDistance = 1.1f;
-    public float speed = 10f;
     public Rigidbody rb;
     public bool isGrounded;
     public static event Action jumpedDelegate;
@@ -49,7 +48,7 @@ public class Jump : Facade
     {
         if (isGrounded)
         {
-            rb.velocity = new Vector3(0, 5, 0);
+            rb.velocity = new Vector3(0, player.Jumpforce, 0);
             jumpedDelegate?.Invoke();
         }
     }

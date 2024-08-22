@@ -9,7 +9,7 @@ public class MoveSlow : Move
     public override void Moved()
     {
         if (speede == true)
-            speed = 25;
+            speed = speed / 2;
         else speed = 50;
 
         base.Moved();

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   speed: 50
-  jumpforce: 0
+  jumpforce: 10

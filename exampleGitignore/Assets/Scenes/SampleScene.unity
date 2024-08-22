@@ -135,11 +135,9 @@ GameObject:
   - component: {fileID: 203812872}
   - component: {fileID: 203812871}
   - component: {fileID: 203812870}
-  - component: {fileID: 203812875}
   - component: {fileID: 203812874}
-  - component: {fileID: 203812876}
-  - component: {fileID: 203812878}
   - component: {fileID: 203812879}
+  - component: {fileID: 203812880}
   - component: {fileID: 203812877}
   m_Layer: 0
   m_Name: Cube
@@ -242,35 +240,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203812868}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d82fec121e1670841a298d4c1a8995ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &203812875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203812868}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28078600f2533d4fab16d3863ddab3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &203812876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203812868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064ecd050326ce242a7c72dc46745854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 6858aa996c05eec40a943dbf7773baa9, type: 2}
 --- !u!54 &203812877
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,18 +273,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &203812878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203812868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e113ea35a5cdc141bb3abd60b04dd98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &203812879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,10 +285,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29a4ba5c71540d418c001cd646509b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 6858aa996c05eec40a943dbf7773baa9, type: 2}
   raycastDistance: 3.8
-  speed: 10
   rb: {fileID: 0}
   isGrounded: 0
+--- !u!114 &203812880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203812868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28078600f2533d4fab16d3863ddab3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 6858aa996c05eec40a943dbf7773baa9, type: 2}
+  movement:
+    m_Name: Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 48721103-120f-448d-bc8a-3517a8fec50d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &600140612
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 1200560943}
+  player: {fileID: 600140612}
 --- !u!1 &676175008
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3668a3a0d8a9f1f45b2024a137ac9cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   swordData: {fileID: 11400000, guid: d63669e283208e04cbf26be729cbf749, type: 2}
   mask:
     serializedVersion: 2
@@ -796,6 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3668a3a0d8a9f1f45b2024a137ac9cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   swordData: {fileID: 11400000, guid: d63669e283208e04cbf26be729cbf749, type: 2}
   mask:
     serializedVersion: 2
@@ -1143,8 +1131,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.051812496, y: 0.92122227}
   m_AnchorMax: {x: 0.051812496, y: 0.92122227}
-  m_AnchoredPosition: {x: 298.12964, y: -40}
-  m_SizeDelta: {x: 599.6299, y: 89.6294}
+  m_AnchoredPosition: {x: 597.9515, y: -40}
+  m_SizeDelta: {x: 1199.2734, y: 89.6294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200560943
 MonoBehaviour:
@@ -1220,6 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3668a3a0d8a9f1f45b2024a137ac9cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   swordData: {fileID: 11400000, guid: f0907f31603df274bb839103560d9b47, type: 2}
   mask:
     serializedVersion: 2

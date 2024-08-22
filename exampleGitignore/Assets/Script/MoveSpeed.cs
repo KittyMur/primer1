@@ -5,11 +5,12 @@ using UnityEngine;
 public class MoveSpeed : Move
 {
     bool speede;
+    int boostSpeed;
     // Start is called before the first frame update
     public override void Moved()
     {
         if (speede == true)
-            speed = 100;
+            speed = speed * 2;
         else speed = 50;
 
         base.Moved();
