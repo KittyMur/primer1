@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragandDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    Vector2 oldPosition;
-    private void OnEnable()
+    public static event Action dropDelegate;
+    protected Vector2 oldPosition;
+
+    void Start()
     {
         oldPosition = transform.localPosition;
     }
@@ -17,6 +21,12 @@ public class DragandDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.position = oldPosition;
+        oldPos();
+        dropDelegate?.Invoke();
+    }
+
+    public virtual void oldPos()
+    {
+        transform.localPosition = oldPosition;
     }
 }

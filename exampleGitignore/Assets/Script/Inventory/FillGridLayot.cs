@@ -11,7 +11,7 @@ public class FillGridLayot : MonoBehaviour
     private int slotCount = 0;
     private void OnEnable()
     {
-        inventoryGrid = GetComponent<GridLayout>();
+        inventoryGrid = GetComponentInChildren<GridLayout>();
     }
     // Start is called before the first frame update
     void Start()
@@ -21,14 +21,6 @@ public class FillGridLayot : MonoBehaviour
 
     void AddSlots()
     {
-      while (slotCount < 100)
-        {
-            GameObject randomSlot = slots[Random.Range(0, slots.Length)];
-
-            GameObject newSlot = Instantiate(slotsPref, inventoryGrid.transform);
-            newSlot = randomSlot;
-
-            slotCount++;
-        }
+      
     }
 }
