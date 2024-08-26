@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MagazineScript : CreateSlots
+public class InventoryScript : CreateSlots
 {
-    public GameObject magazineSlot;
-    VerticalLayoutGroup magazineGrid;
+    public GameObject inventorySlot;
+    GridLayoutGroup inventoryGrid;
     // Start is called before the first frame update
     private void OnEnable()
     {
-        magazineGrid = GetComponentInChildren<VerticalLayoutGroup>();
+        inventoryGrid = GetComponent<GridLayoutGroup>();
     }
     void Start()
     {
-        Count = 10;
+        Count = 100;
         while (maxCount < Count)
         {
             AddSlot();
@@ -22,7 +22,7 @@ public class MagazineScript : CreateSlots
     }
     public override void AddSlot()
     {
-        Instantiate(magazineSlot, magazineGrid.transform);
+        Instantiate(inventorySlot, inventoryGrid.transform);
         maxCount++;
     }
 }

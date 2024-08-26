@@ -1,18 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragandDrop : MonoBehaviour, IDragHandler, IEndDragHandler
+public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static event Action dropDelegate;
     protected Vector2 oldPosition;
-
-    void Start()
+    GameObject grid;
+    public MagazineSlotsScript[] magazineSlots;
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        oldPosition = transform.localPosition;
+        oldPosition = transform.position;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -21,12 +23,7 @@ public class DragandDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        oldPos();
         dropDelegate?.Invoke();
     }
 
-    public virtual void oldPos()
-    {
-        transform.localPosition = oldPosition;
-    }
 }

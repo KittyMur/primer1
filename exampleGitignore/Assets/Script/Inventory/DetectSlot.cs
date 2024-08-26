@@ -1,43 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.UI;
 
-public class DetectSlot : DragandDrop
+public class DetectSlot : MonoBehaviour
 {
-    bool isSlot;
+    InventoryData data;
     private void OnEnable()
     {
-        dropDelegate += Detect;
+        DragandDrop.dropDelegate += Detect;
     }
     private void OnDisable()
     {
-        dropDelegate -= Detect;
+        DragandDrop.dropDelegate -= Detect;
     }
 
     private void Detect()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        int mask = LayerMask.GetMask("inventorySlot");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, 0f, mask);
 
-        int mask = 1 << LayerMask.NameToLayer("inventorySlot");
-
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore))
+        if (hit.collider != null)
         {
-            isSlot = true;
-            Debug.Log("111");
+            Transform data = hit.collider.transform;
+            data.SetParent(transform);
+            data.transform.position = transform.position;
         }
-        else
-        {
-            isSlot = false;
-        }
-    }
-
-    public override void oldPos()
-    {
-        if (isSlot)
-            Debug.Log("111");
-
-        if (isSlot == false)
-            base.oldPos();
     }
 }
