@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef59787cf130f9447b61fb4ba440bb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magazineSlot: {fileID: 0}
   datas:
   - {fileID: 11400000, guid: dc777c6cc8a83e940a510d8f4cc6e823, type: 2}
   - {fileID: 11400000, guid: b3c2143ed438ad543b2dfd5a67e30093, type: 2}

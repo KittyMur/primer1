@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static event Action dropDelegate;
+    public static event Action dropRemove;
     protected Vector2 oldPosition;
     GameObject grid;
     public MagazineSlotsScript[] magazineSlots;
@@ -25,5 +26,8 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         dropDelegate?.Invoke();
     }
-
+    void OnMouseDown()
+    {
+        dropRemove?.Invoke();
+    }
 }

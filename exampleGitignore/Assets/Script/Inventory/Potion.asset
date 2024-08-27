@@ -15,4 +15,4 @@ MonoBehaviour:
   inventoryName: Potion
   inventoryCondition: 0
   inventoryImage: {fileID: 21300000, guid: 4503d79d6b018474f8816b1f0ac201a2, type: 3}
-  inventorySize: {x: 3, y: 1}
+  inventorySize: {x: 1, y: 1}

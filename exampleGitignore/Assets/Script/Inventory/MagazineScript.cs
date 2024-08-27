@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MagazineScript : CreateSlots
+public class MagazineScript : MonoBehaviour
 {
     public GameObject magazineSlot;
     VerticalLayoutGroup magazineGrid;
+    int Count;
+    int maxCount = 0;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -20,7 +22,7 @@ public class MagazineScript : CreateSlots
             AddSlot();
         }
     }
-    public override void AddSlot()
+    public void AddSlot()
     {
         Instantiate(magazineSlot, magazineGrid.transform);
         maxCount++;
