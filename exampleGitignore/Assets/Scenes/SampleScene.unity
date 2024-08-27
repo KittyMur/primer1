@@ -405,8 +405,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &203812868
 GameObject:
@@ -2557,7 +2557,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d397bf23691454490bdf391e21c1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magazineSlot: {fileID: 6695460588498884978, guid: ea122d2e5dbb4674a9de093b8c837ed9, type: 3}
+  magazineSlots:
+  - {fileID: 6695460588498884978, guid: 09ad11d436fa5b7469482155b400814e, type: 3}
+  - {fileID: 6695460588498884978, guid: ea122d2e5dbb4674a9de093b8c837ed9, type: 3}
 --- !u!1001 &1531896810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2677,11 +2679,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9165846427286651837, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
       propertyPath: slotSize.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -9165846427286651837, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
       propertyPath: slotSize.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 389228739479336420, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
       propertyPath: m_Pivot.x

@@ -15,4 +15,4 @@ MonoBehaviour:
   inventoryName: Sword
   inventoryCondition: 0
   inventoryImage: {fileID: 21300000, guid: ff13b7e65a9d65a4f9e0f16a8bc13fec, type: 3}
-  inventorySize: {x: 3, y: 1}
+  inventorySize: {x: 2, y: 2}

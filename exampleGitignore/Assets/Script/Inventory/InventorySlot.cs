@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,16 +9,20 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, Slot
 {
     public Vector2 slotSize;
+    public InventoryData data;
+    Vector2 oldPosition;
+    GameObject slot;
+
+    public Text slotName;
+    public Image slotImage;
     private void OnEnable()
     {
         transform.localScale = slotSize;
         DragandDrop.dropDelegate += AddData;
-        DragandDrop.dropRemove += RemoveData;
     }
     private void OnDisable()
     {
         DragandDrop.dropDelegate -= AddData;
-        DragandDrop.dropRemove += RemoveData;
     }
     public void AddData()
     {
@@ -26,15 +31,33 @@ public class InventorySlot : MonoBehaviour, Slot
 
         if (hit.collider != null)
         {
-            Transform data = hit.collider.transform;
-            data.SetParent(transform);
-            data.transform.position = transform.position;
+            slot = hit.collider.gameObject;
+            data = slot.GetComponent<MagazineSlotsScript>().data;
+
+            Transform data1 = hit.collider.transform;
+
+            if (slotSize == data.InventorySize)
+            {
+                data1.SetParent(transform);
+                data1.transform.position = transform.position;
+
+                //slotImage.enabled = true;
+                //slotName.text = data.InventoryName;
+                //slotImage.sprite = data.InventoryImage;
+
+                //slot.GetComponent<MagazineSlotsScript>().data = null;
+            }
+            else
+            {
+                data = null;
+                RemoveData();
+            }
+
         }
     }
-
     public void RemoveData()
     {
-        Debug.Log("111");
+        oldPosition = slot.GetComponent<DragandDrop>().oldPosition;
+        slot.transform.position = oldPosition;
     }
-    
 }

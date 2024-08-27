@@ -5,18 +5,16 @@ using UnityEngine.UI;
 
 public class MagazineSlotsScript : MonoBehaviour, Slot
 {
-    public InventoryData[] datas;
+    public InventoryData data;
     public Text slotName;
-    private float slotCondition;
     public Image slotImage;
-    private Vector2 slotSize;
     private void OnEnable()
     {
-        DragandDrop.dropRemove += RemoveData;
+        DragandDrop.dropDelegate += RemoveData;
     }
     private void OnDisable()
     {
-        DragandDrop.dropRemove += RemoveData;
+        DragandDrop.dropDelegate += RemoveData;
     }
     // Start is called before the first frame update
     void Start()
@@ -27,14 +25,13 @@ public class MagazineSlotsScript : MonoBehaviour, Slot
     // Update is called once per frame
     public void AddData()
     {
-        int indezDataList = Random.Range(0, datas.Length);
-        slotName.text = datas[indezDataList].InventoryName;
-        slotImage.sprite = datas[indezDataList].InventoryImage;
-        transform.localScale = datas[indezDataList].InventorySize;
+        slotName.text = data.InventoryName;
+        slotImage.sprite = data.InventoryImage;
+        transform.localScale = data.InventorySize;
     }
 
     public void RemoveData()
     {
-        Debug.Log("111");
+
     }
 }

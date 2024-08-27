@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MagazineScript : MonoBehaviour
+public class MagazineScript : ICreateSlots
 {
-    public GameObject magazineSlot;
+    public GameObject[] magazineSlots;
     VerticalLayoutGroup magazineGrid;
     int Count;
     int maxCount = 0;
@@ -16,15 +16,16 @@ public class MagazineScript : MonoBehaviour
     }
     void Start()
     {
-        Count = 10;
+        Count = 5;
         while (maxCount < Count)
         {
-            AddSlot();
+            AddSlots();
         }
     }
-    public void AddSlot()
+    public override void AddSlots()
     {
-        Instantiate(magazineSlot, magazineGrid.transform);
+        int indezDataList = Random.Range(0, magazineSlots.Length);
+        Instantiate(magazineSlots[indezDataList], magazineGrid.transform);
         maxCount++;
     }
 }
