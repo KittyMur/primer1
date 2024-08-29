@@ -901,6 +901,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5279774364287268809, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279774364287268809, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413383728867485847, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413383728867485847, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660307028169649732, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660307028169649732, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6695460588498884978, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
       propertyPath: m_Name
       value: PrefabSlotinventory 1 (1)
@@ -2764,6 +2788,30 @@ PrefabInstance:
     - target: {fileID: 389228739479336420, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279774364287268809, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279774364287268809, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413383728867485847, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413383728867485847, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660307028169649732, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660307028169649732, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
+      propertyPath: slotSize.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6695460588498884978, guid: f880f14401c4d4942973b61517e2ae4c, type: 3}
       propertyPath: m_Name

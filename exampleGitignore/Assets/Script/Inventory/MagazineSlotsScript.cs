@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class MagazineSlotsScript : Slot, IRemovable
 {
     Transform parent;
+    GameObject slot;
+    public static event Action dDelegate;
     private void OnEnable()
     {
         DragandDrop.dropDelegate += AddData;
@@ -37,7 +39,7 @@ public class MagazineSlotsScript : Slot, IRemovable
     }
     public override void DetectData()
     {
-        GameObject slot = hit.collider.gameObject;
+        slot = hit.collider.gameObject;
         Vector2 slotSize = slot.GetComponent<InventorySlot>().slotSize;
         float slotCondition = slot.GetComponent<InventorySlot>().slotCondition;
         Transform slotTransform = hit.collider.transform;
@@ -47,6 +49,7 @@ public class MagazineSlotsScript : Slot, IRemovable
             transform.SetParent(slotTransform);
             transform.position = slotTransform.transform.position;
             GetComponent<DragandDrop>().change = false;
+            dDelegate?.Invoke();
         }  
     }
     public void RemoveSlot()
@@ -57,7 +60,6 @@ public class MagazineSlotsScript : Slot, IRemovable
 
     public void SetParent()
     {
-        if (hit.collider != null)
-            transform.SetParent(parent);
+        transform.SetParent(parent);
     }
 }

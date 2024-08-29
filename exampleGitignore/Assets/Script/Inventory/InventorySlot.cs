@@ -11,33 +11,38 @@ public class InventorySlot : Slot, IRemovable
 {
     public Vector2 slotSize;
     public int slotCondition = 0;
-
     private void OnEnable()
     {
         transform.localScale = slotSize;
-        DragandDrop.dropDelegate += AddData;
+        MagazineSlotsScript.dDelegate += AddData;
         DragandDrop.removeDelegate += RemoveSlot;
     }
     private void OnDisable()
     {
-        DragandDrop.dropDelegate -= AddData;
-        DragandDrop.removeDelegate += RemoveSlot;
+        DragandDrop.removeDelegate -= RemoveSlot;
+        MagazineSlotsScript.dDelegate -= AddData;
     }
     public override void AddData()
     {
-        mask = LayerMask.GetMask("magazineSlot");
+        mask = ~LayerMask.GetMask("magazineSlot");
         base.AddData();
     }
     public override void DetectData()
     {
-        if (GetComponentInChildren<MagazineSlotsScript>() == true)
-        {
+        if (GetComponentInChildren<MagazineSlotsScript>() != null)
             slotCondition = 1;
-        }
         else slotCondition = 0;
     }
     public void RemoveSlot()
     {
-        slotCondition = 0;
+        if (slotCondition == 1)
+        {
+            //Transform slotTransform = GetComponentInChildren<MagazineSlotsScript>().transform;
+            //Transform magazineTransform = FindObjectOfType<VerticalLayoutGroup>().transform;
+
+            //slotTransform.SetParent(magazineTransform);
+
+            slotCondition = 0;s
+        }
     }
 }

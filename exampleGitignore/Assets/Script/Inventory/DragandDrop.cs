@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static event Action dropDelegate;
     public static event Action removeDelegate;
@@ -27,8 +27,7 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (change)
             transform.position = oldPosition;
     }
-
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnClick()
     {
         removeDelegate?.Invoke();
     }
