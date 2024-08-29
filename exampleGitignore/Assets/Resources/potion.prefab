@@ -91,8 +91,8 @@ GameObject:
   - component: {fileID: 8019716725226606773}
   - component: {fileID: -9058810056287790039}
   - component: {fileID: 2849254103521962460}
-  m_Layer: 7
-  m_Name: sword
+  m_Layer: 8
+  m_Name: potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,9 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef59787cf130f9447b61fb4ba440bb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: b3c2143ed438ad543b2dfd5a67e30093, type: 2}
+  data: {fileID: 11400000, guid: dc777c6cc8a83e940a510d8f4cc6e823, type: 2}
   slotName: {fileID: 8517098053925559875}
   slotImage: {fileID: 3779884865355623583}
+  slotCondition: 0
+  mask: 0
 --- !u!114 &-9058810056287790039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ac4f6cbd58ba04a96f09fd2b9ba491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magazineSlots: []
+  oldPosition: {x: 0, y: 0}
 --- !u!61 &2849254103521962460
 BoxCollider2D:
   m_ObjectHideFlags: 0

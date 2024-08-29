@@ -6,11 +6,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public static event Action dropDelegate;
+    public static event Action removeDelegate;
     public Vector2 oldPosition;
-
+    public bool change;
     public void OnBeginDrag(PointerEventData eventData)
     {
         oldPosition = transform.position;
@@ -23,9 +24,12 @@ public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         dropDelegate?.Invoke();
+        if (change)
+            transform.position = oldPosition;
     }
-    void OnMouseDown()
-    {
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        removeDelegate?.Invoke();
     }
 }

@@ -2558,8 +2558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magazineSlots:
-  - {fileID: 6695460588498884978, guid: 09ad11d436fa5b7469482155b400814e, type: 3}
-  - {fileID: 6695460588498884978, guid: ea122d2e5dbb4674a9de093b8c837ed9, type: 3}
+  - {fileID: 8019716725226606773, guid: 09ad11d436fa5b7469482155b400814e, type: 3}
+  - {fileID: 8019716725226606773, guid: ea122d2e5dbb4674a9de093b8c837ed9, type: 3}
 --- !u!1001 &1531896810
 PrefabInstance:
   m_ObjectHideFlags: 0
