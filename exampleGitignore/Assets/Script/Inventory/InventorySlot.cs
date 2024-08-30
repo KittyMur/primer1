@@ -42,7 +42,7 @@ public class InventorySlot : Slot, IRemovable
 
             //slotTransform.SetParent(magazineTransform);
 
-            slotCondition = 0;s
+            slotCondition = 0;
         }
     }
 }
